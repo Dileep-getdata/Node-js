@@ -1,13 +1,36 @@
 const http=require('http');
+const fs=require('fs');
+const { buffer } = require('stream/consumers');
+
 const server=http.createServer((req,res)=>{
-    console.log(req.url,req.method,req.headers);
-// process.exit()
-    res.setHeader('Content-Type','text/html');
-    
+const url=req.url;
+const method=req.method;
+if(url==='/'){
     res.write('<html>');
-    res.write('<head><title>My first page</title></head>');
-    res.write('<body><h1>Welcome to my node JS project</h1></body>');
+    res.write('<head><title>My message page</title></head>');
+    res.write('<body><form action="/message" method="POST"><input type="text" name="message"><button type="submit">Send</button></form></body>');
     res.write('</html>');
-    res.end();
+   return  res.end();
+}
+
+if(url==='/message' && method==='POST'){
+    const body=[];
+    req.on('data',(chunk)=>{
+        // console.log(chunk);
+        body.push(chunk);        
+
+    });
+    req.on('end',()=>{
+        const parseBody=Buffer.concat(body).toString();
+        const message=parseBody.split('=')[1];
+        fs.writeFileSync('message.txt',message);
+
+    });
+    // fs.writeFileSync('message.txt','dum');
+    res.statusCode=302;
+    res.setHeader('Location','/');
+    return res.end();
+}
+
 });
-server.listen(3000)
+server.listen(4000);
