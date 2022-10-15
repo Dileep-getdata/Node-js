@@ -1,9 +1,16 @@
 body{
     background-color: brown;
 }
+.main-header{
+    display: flex;
+    align-items: center;
+}
 .main-header-nav{
-    padding: 1.5rem;
-    background-color:tomato;
+    
+    align-items: center;
+    padding: .5rem;
+    background-color:rgb(226, 200, 95);
+    border-radius: 5px;
 }
 .main-header-item{
     display: inline;
@@ -13,8 +20,13 @@ body{
 .main-header-item a{
     text-decoration: none;
     color: white;
+    font-size: 1rem;
+}
+.main-header-item a:hover{
+    text-decoration: none;
+    color: dodgerblue;
     font-size: 1.5rem;
 }
-main{
-    padding: auto;
+.main{
+    margin: 2rem;
 }
