@@ -1,32 +1,34 @@
-body{
-    background-color: brown;
-}
+
 .main-header{
-    display: flex;
-    align-items: center;
-}
-.main-header-nav{
+    /* display: flex; */
     
-    align-items: center;
-    padding: .5rem;
-    background-color:rgb(226, 200, 95);
-    border-radius: 5px;
 }
-.main-header-item{
+.main-header-nav{   
+    
+    padding: .5rem;
+    background-color:rgb(64, 170, 241);
+    border-radius: 5px;
+    
+}
+.main-header-item{    
     display: inline;
+    
     padding-left: 2rem;
+    
     
 }
 .main-header-item a{
     text-decoration: none;
     color: white;
     font-size: 1rem;
+    
 }
 .main-header-item a:hover{
     text-decoration: none;
-    color: dodgerblue;
-    font-size: 1.5rem;
+    color:rgb(16, 28, 137);
+    font-weight: bolder;
 }
 .main{
     margin: 2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

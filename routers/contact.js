@@ -1,16 +1,9 @@
 const express=require('express');
-const path=require('path');
-const pathDir=require('../util/path.js');
+
 const routers=express.Router();
+const contactC=require('../Controllers/contactCont')
+routers.get('/',contactC.contactUsController);
 
-routers.get('/',(req,res,next)=>{
-    res.sendFile(path.join(pathDir,'Views','contact.html'));
-    
-});
-
-routers.post('/',(req,res,next)=>{
-    console.log(req.body);
-    res.redirect('/success');
-});
+routers.post('/',contactC.contactUsControllerPost);
 
 module.exports=routers;

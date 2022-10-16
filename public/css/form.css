@@ -1,0 +1,21 @@
+.main{
+    background-color: rgba(216, 217, 219, 0.89);
+    width:80%;
+    
+   
+}
+form input{
+    margin: 10px;
+    width:90%;
+    height: 40px;
+    border-radius: 10px ;
+    border-color: bisque;
+}
+form button{
+    width:50%;
+    height: 30px;
+    margin: 10px;
+    margin-left: 20%;
+    border: 1px solid green;
+    background-color:rgb(84, 135, 34);
+}
